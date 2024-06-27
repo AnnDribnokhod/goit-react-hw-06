@@ -17,12 +17,7 @@ export default function ContactForm() {
       .min(3, "Must be at least 3 characters")
       .max(50, "Must be 50 characters or less")
       .required("Required"),
-    number: Yup.string()
-      .matches(
-        /^\+380\d{9}$/,
-        "Phone number must be in the format: +380XXXXXXXXX"
-      )
-      .required("Required"),
+    number: Yup.string().required("Required"),
   });
 
   const handleSubmit = (values, { resetForm }) => {
